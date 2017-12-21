@@ -46,13 +46,39 @@ Page({
         console.log(res.data)
         that.data.items = res.data
       }
+    }),
+    wx.request({
+      url: "https://wx.qiaker.cn/api",
+      data: {'c':'photo'},
+      header: {},
+      method: "GET",
+      dataType: "json",
+      success: res => {
+        console.log(res.data);
+        this.setData({
+          slideList: res.data
+        });
+        //    console.log(this.data.slideList);
+      }
     })
+  },
+  onReady: function () {
+    // 页面渲染完成
+  },
+  onShow: function () {
+    // 页面显示
+  },
+  onHide: function () {
+    // 页面隐藏
+  },
+  onUnload: function () {
+    // 页面关闭
   },
   onShareAppMessage: function (options) {
     //console.log(options);
     return {
-      title: '标题',
-      desc: '描述',
+      title: '标题111',
+      desc: '描述22',
       path: '/pages/index/',
     }
   }

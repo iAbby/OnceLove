@@ -58,3 +58,11 @@
   padding: 30rpx;
   background-color: #f8f8f8; 
 }
+.swiper swiper-item{
+  width: 750rpx;
+  height: 375rpx;
+}
+.swiper image{
+  width: 750rpx;
+  height: 375rpx;
+}
