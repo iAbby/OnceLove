@@ -1,14 +1,11 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
 var server = app.globalData.server;
 var userid = app.globalData.userid;
-
 Page({
   data: {
     userInfo: {},
-    hasUserInfo: false,
     markers: [{
       iconPath: "/images/map.png",
       id: 0,
@@ -28,19 +25,16 @@ Page({
     })
   },
   onLoad: function () {
-
     var that = this
-
-    var sessionInfo = wx.getStorageSync('login_token');
-    console.log(sessionInfo);
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo( function( userInfo ) {
-      //更新数据
-      that.setData( {
-        userInfo: userInfo
-      })
-    })
-
+    
+    wx.getUserInfo({
+      success: function(res){
+        that.setData({
+          userInfo: res.userInfo
+        })
+      }
+    }) 
+    
     wx.request({
       url: server,
       method: 'GET',
@@ -53,22 +47,9 @@ Page({
         that.setData({
           mainInfo: res.data.mainInfo,
           zanLog: res.data.zanLog,
-          zanNum: res.data.zanNum
+          zanNum: res.data.zanNum,        
+          slideList: res.data.slideList
         });
-      }
-    }),
-    wx.request({
-      url: server,
-      data: {'c':'photo'},
-      header: {},
-      method: "GET",
-      dataType: "json",
-      success: res => {
-        // console.log(res.data);
-        that.setData({
-          slideList: res.data
-        });
-        //    console.log(this.data.slideList);
       }
     })
   },
@@ -92,24 +73,57 @@ Page({
       path: '/pages/index/',
     }
   },
+  onPullDownRefresh(){
+　　console.log('--------下拉刷新-------')
+　　 wx.showNavigationBarLoading() //在标题栏中显示加载  
+    var that = this;
+　　 wx.request({
+      url: server,
+      method: 'GET',
+      data: { 'c': 'info', 'userid': userid},
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function(res) {
+        // console.log(res.data)
+        that.setData({
+          mainInfo: res.data.mainInfo,
+          zanLog: res.data.zanLog,
+          zanNum: res.data.zanNum,        
+          slideList: res.data.slideList
+        });
+      }
+    })
+  },
   zan: function (event) {
     var that = this;
+
+    var userInfo = that.data.userInfo;
+    var name = userInfo.nickName;
+    var face = userInfo.avatarUrl;
     wx.request({
       url: server,
-      data: {'c':'zan','userid':userid},
+      data: {'c':'zan','userid':userid,'nickname':name,'face':face},
       header: {},
       method: "GET",
       dataType: "json",
       success: res => {
-        // console.log(res.data);
+        console.log(res.data);
         that.setData({
           zansta: res.data.zansta
-        });       
-        wx.showToast({
-          title: '感谢支持！',
-          icon: 'success',
-          duration: 2000
-        })
+        }); 
+        
+        if (res.data.success) {      
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success',
+            duration: 2000
+          })
+        }else {
+          wx.showToast({
+            title: res.data.msg,
+          })
+        }
       }
     })
   },
