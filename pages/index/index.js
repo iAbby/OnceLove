@@ -2,6 +2,9 @@
 //获取应用实例
 const app = getApp()
 
+var server = app.globalData.server;
+var userid = app.globalData.userid;
+
 Page({
   data: {
     userInfo: {},
@@ -27,6 +30,9 @@ Page({
   onLoad: function () {
 
     var that = this
+
+    var sessionInfo = wx.getStorageSync('login_token');
+    console.log(sessionInfo);
     //调用应用实例的方法获取全局数据
     app.getUserInfo( function( userInfo ) {
       //更新数据
@@ -36,26 +42,30 @@ Page({
     })
 
     wx.request({
-      url: 'https://wx.qiaker.cn/api',
+      url: server,
       method: 'GET',
-      data: {},
+      data: { 'c': 'info', 'userid': userid},
       header: {
         'Accept': 'application/json'
       },
       success: function(res) {
-        console.log(res.data)
-        that.data.items = res.data
+        // console.log(res.data)
+        that.setData({
+          mainInfo: res.data.mainInfo,
+          zanLog: res.data.zanLog,
+          zanNum: res.data.zanNum
+        });
       }
     }),
     wx.request({
-      url: "https://wx.qiaker.cn/api",
+      url: server,
       data: {'c':'photo'},
       header: {},
       method: "GET",
       dataType: "json",
       success: res => {
-        console.log(res.data);
-        this.setData({
+        // console.log(res.data);
+        that.setData({
           slideList: res.data
         });
         //    console.log(this.data.slideList);
@@ -81,5 +91,26 @@ Page({
       desc: '描述22',
       path: '/pages/index/',
     }
-  }
+  },
+  zan: function (event) {
+    var that = this;
+    wx.request({
+      url: server,
+      data: {'c':'zan','userid':userid},
+      header: {},
+      method: "GET",
+      dataType: "json",
+      success: res => {
+        // console.log(res.data);
+        that.setData({
+          zansta: res.data.zansta
+        });       
+        wx.showToast({
+          title: '感谢支持！',
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    })
+  },
 })
