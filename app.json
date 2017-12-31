@@ -5,8 +5,8 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Once Love",
+    "navigationBarTitleText": "我们结婚了",
     "navigationBarTextStyle":"black",
-    "enablePullDownRefresh":true
+    "enablePullDownRefresh":false
   }
 }

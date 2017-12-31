@@ -25,7 +25,7 @@
 .friends {
   min-height: 0;
   overflow: hidden;
-  width: 480rpx;
+  width: 600rpx;
   margin: 0 auto;
   margin-top: 20rpx;
 }
@@ -54,33 +54,21 @@
 .share {
   width: 200rpx;
 }
-.address {
-  text-align: center;
-  padding: 30rpx;
-  background-color: #f8f8f8; 
-}
 .swiper {
-  margin-top: 50rpx;
-  margin-bottom: 50rpx;
+  width: 750rpx;
+  height: 1180rpx;
+}
+.swiper swiper{
+  width: 750rpx;
+  height: 1180rpx;
 }
 .swiper swiper-item{
   width: 750rpx;
-  height: 375rpx;
+  height: 1180rpx;
 }
 .swiper image{
   width: 750rpx;
-  height: 375rpx;
-}
-.flower {
-  width: 500rpx;
-  height: 228rpx;
-  margin: 0 auto;
-  margin-top: 50rpx;
-  margin-bottom: 100rpx;
-}
-.flower image {
-  width: 500rpx;
-  height: 228rpx;
+  height: 1180rpx;
 }
 
 .savethedate {
@@ -104,4 +92,46 @@
 .diamond image {
   width: 400rpx;
   height: 59rpx;
+}
+.map {
+  width: 750rpx;
+  height: 525rpx;
+  overflow: hidden;
+  position: relative;
+}
+.mapInfo {
+  width:630rpx;
+  height: 405rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+  border: 1px solid #c8ba7b;
+  padding: 30rpx;
+}
+.detailInfo {
+  width:629rpx;
+  height: 404rpx;
+  color: #c8ba7b;
+  background-color: rgba(0,0,0,.3)
+}
+.address {
+  text-align: center;
+  padding: 20rpx; 
+  font-weight: 300;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+.mapBtn {
+  width: 400rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 40rpx;
+  line-height: 100rpx;
+  color: #9e8144;
+  font-weight: 300;
+  margin-top: 20rpx; 
+  background-color: #c8ba7b;
+  box-shadow: 0 1px 3px rgba(0,0,0,.5);
 }

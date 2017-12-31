@@ -20,8 +20,8 @@ Page({
       latitude: 36.718820,
       longitude: 119.128520,
       scale: 18,
-      name: '万达广场',
-      address: '山东省潍坊市万达广场'
+      name: '万达铂尔曼酒店',
+      address: '山东省潍坊市奎文区鸢飞路福寿街路口东200米'
     })
   },
   onLoad: function () {
@@ -66,11 +66,23 @@ Page({
     // 页面关闭
   },
   onShareAppMessage: function (options) {
-    //console.log(options);
+    console.log(options);
     return {
-      title: '标题111',
-      desc: '描述22',
-      path: '/pages/index/',
+      title: '我们结婚啦！',
+      desc: '我们的幸福需要您的祝福与见证，诚意邀请您参加我们的婚礼',
+      imageUrl: '/images/share.jpg',
+      path: 'pages/index/index',
+      success: function (res) {
+        wx.showToast({
+          title: '分享成功',
+        })
+      },
+      fail: function (res) {
+        // 转发失败
+        wx.showToast({
+          title: '分享取消',
+        })
+      }
     }
   },
   onPullDownRefresh(){
@@ -114,14 +126,16 @@ Page({
         }); 
         
         if (res.data.success) {      
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'success',
-            duration: 2000
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
+            showCancel: false
           })
         }else {
-          wx.showToast({
-            title: res.data.msg,
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
+            showCancel: false
           })
         }
       }
