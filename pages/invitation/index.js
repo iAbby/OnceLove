@@ -1,52 +1,95 @@
-//index.js
-//获取应用实例
+// pages/invitation/index.js
 const app = getApp()
 var server = app.globalData.server;
 var userid = app.globalData.userid;
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    userInfo: {},   
-  },  
-  onLoad: function () {
+    userInfo: {}, 
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
     var that = this
-    
+
     wx.getUserInfo({
-      success: function(res){
+      success: function (res) {
         that.setData({
           userInfo: res.userInfo
         })
       }
-    }) 
-    
+    })
+
     wx.request({
       url: server,
       method: 'GET',
-      data: { 'c': 'info', 'userid': userid},
+      data: { 'c': 'info', 'userid': userid },
       header: {
         'Accept': 'application/json'
       },
-      success: function(res) {
+      success: function (res) {
         // console.log(res.data)
-        that.setData({       
+        that.setData({
+          mainInfo: res.data.mainInfo,
+          zanLog: res.data.zanLog,
+          zanNum: res.data.zanNum,
           slideList: res.data.slideList
         });
       }
     })
   },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
   onReady: function () {
-    // 页面渲染完成
+  
   },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
   onShow: function () {
-    // 页面显示
+  
   },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
   onHide: function () {
-    // 页面隐藏
+  
   },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
   onUnload: function () {
-    // 页面关闭
+  
   },
-  onShareAppMessage: function (options) {
-    // console.log(options);
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
     return {
       title: '我们结婚啦！',
       desc: '我们的幸福需要您的祝福与见证，诚意邀请您参加我们的婚礼',
@@ -64,5 +107,5 @@ Page({
         })
       }
     }
-  },
+  }
 })

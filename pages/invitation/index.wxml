@@ -1,0 +1,21 @@
+<!--pages/invitation/index.wxml-->
+<view class="container">
+  <view class="savethedate">
+    <image src="/images/save_the_date_pu.gif" width="100%"/>
+  </view>
+  <view class="date">
+    <view>{{mainInfo.date}}</view>
+    <view>农历 {{mainInfo.lunar}}</view>
+  </view>
+  <view class="name">
+    <span class="fl">{{mainInfo.he}}</span>
+    <span class="fr">{{mainInfo.she}}</span>  
+  </view>
+  <view class="diamond">
+    <image src="/images/diamond-divider.png" width="100%"/>
+  </view>
+  <view class='detail'>
+    <view class="address">{{mainInfo.hotel}}</view>
+    <view class="address">{{mainInfo.address}}</view>
+  </view>
+</view>
