@@ -3,6 +3,7 @@
 const app = getApp()
 var server = app.globalData.server;
 var userid = app.globalData.userid;
+
 Page({
   data: {
     userInfo: {},   
@@ -50,7 +51,7 @@ Page({
     return {
       title: '我们结婚啦！',
       desc: '我们的幸福需要您的祝福与见证，诚意邀请您参加我们的婚礼',
-      imageUrl: '/images/share.jpg',
+      imageUrl: '/images/mail.png',
       path: 'pages/index/index',
       success: function (res) {
         wx.showToast({

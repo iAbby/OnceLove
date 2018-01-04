@@ -1,5 +1,4 @@
 // app.js
-var aldstat = require("./utils/ald-stat.js");
 App({
   onLaunch: function () {
     var that = this;
@@ -22,7 +21,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    userid:1,
+    userid:2,
     server: 'https://wx.qiaker.cn/api'
   }
 });

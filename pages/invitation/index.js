@@ -2,6 +2,9 @@
 const app = getApp()
 var server = app.globalData.server;
 var userid = app.globalData.userid;
+var touchDot = 0;//触摸时的原点  
+var time = 0;// 时间记录，用于滑动时且时间小于1s则执行左右滑动 
+var interval = "";// 记录/清理时间记录 
 Page({
 
   /**
@@ -93,7 +96,7 @@ Page({
     return {
       title: '我们结婚啦！',
       desc: '我们的幸福需要您的祝福与见证，诚意邀请您参加我们的婚礼',
-      imageUrl: '/images/share.jpg',
+      imageUrl: '/images/mail.png',
       path: 'pages/index/index',
       success: function (res) {
         wx.showToast({
@@ -107,5 +110,36 @@ Page({
         })
       }
     }
-  }
+  },
+  // 触摸开始事件  
+  touchStart: function (e) {
+    touchDot = e.touches[0].pageX; // 获取触摸时的原点  
+    // 使用js计时器记录时间    
+    interval = setInterval(function () {
+      time++;
+    }, 100);
+  },
+  // 触摸移动事件  
+  touchMove: function (e) {
+    var touchMove = e.touches[0].pageX;
+    console.log("touchMove:" + touchMove + " touchDot:" + touchDot + " diff:" + (touchMove - touchDot));
+    // 向左滑动    
+    if (touchMove - touchDot <= -40 && time < 10) {
+      wx.switchTab({
+        url: '/pages/map/index'
+      });
+    }
+    // 向右滑动  
+    if (touchMove - touchDot >= 40 && time < 10) {
+      console.log('向右滑动');
+      wx.switchTab({
+        url: '/pages/index/index'
+      });
+    }
+  },
+  // 触摸结束事件  
+  touchEnd: function (e) {
+    clearInterval(interval); // 清除setInterval  
+    time = 0;
+  },  
 })

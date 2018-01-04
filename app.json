@@ -8,13 +8,13 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "我们结婚了",
+    "navigationBarTitleText": "Just Married",
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh":false
   },
   "tabBar": {
-    "color": "#dddddd",
-    "selectedColor": "#3cc51f",
+    "color": "#ccc",
+    "selectedColor": "#ff4c91",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "list": [
