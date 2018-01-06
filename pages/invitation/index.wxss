@@ -29,7 +29,7 @@
   height: 59rpx;
   margin: 0 auto;
   margin-top: 20rpx;
-  margin-bottom: 50rpx;
+  margin-bottom: 20rpx;
 }
 .diamond image {
   width: 400rpx;
@@ -39,6 +39,17 @@
   text-align: center;
   padding: 20rpx; 
   font-weight: 300;
-  font-size: 36rpx;
-  line-height: 50rpx;
+  font-size: 34rpx;
+  line-height: 40rpx;
+}
+.s_icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 auto;
+  margin-top: 30rpx; 
+}
+
+.s_icon image {
+  width: 60rpx;
+  height: 60rpx;
 }
