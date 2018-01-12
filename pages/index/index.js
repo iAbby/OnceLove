@@ -33,6 +33,17 @@ Page({
         });
       }
     })
+
+    wx.setClipboardData({
+      data: '7mdRbr48sM',
+      success: function(res) {
+        wx.getClipboardData({
+          success: function(res) {
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
   },
   onReady: function () {
     // 页面渲染完成
