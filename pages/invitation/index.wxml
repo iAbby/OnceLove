@@ -11,7 +11,7 @@
     <image src="/images/diamond-divider.png" width="100%"/>
   </view>
   <view class="date">
-    <view>{{mainInfo.date}}</view>
+    <view>本人兹定于 {{mainInfo.date}}</view>
     <view>农历 {{mainInfo.lunar}}</view>
     <view>举办婚礼</view>
     <view>期盼您的到来</view>
