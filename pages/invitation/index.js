@@ -1,7 +1,7 @@
 // pages/invitation/index.js
 const app = getApp()
 var server = app.globalData.server;
-var userid = app.globalData.userid;
+var appid = app.globalData.appid;
 var touchDot = 0;//触摸时的原点  
 var time = 0;// 时间记录，用于滑动时且时间小于1s则执行左右滑动 
 var interval = "";// 记录/清理时间记录 
@@ -31,7 +31,7 @@ Page({
     wx.request({
       url: server,
       method: 'GET',
-      data: { 'c': 'info', 'userid': userid },
+      data: { 'c': 'info', 'appid': appid },
       header: {
         'Accept': 'application/json'
       },
@@ -93,10 +93,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    var that = this;
+    //console.log(that.data);
     return {
-      title: '我们结婚啦！',
-      desc: '我们的幸福需要您的祝福与见证，诚意邀请您参加我们的婚礼',
-      imageUrl: '/images/mail.png',
+      title: that.data.mainInfo.share,
+      imageUrl: that.data.mainInfo.thumb,
       path: 'pages/index/index',
       success: function (res) {
         wx.showToast({

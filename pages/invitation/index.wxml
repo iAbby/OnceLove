@@ -1,5 +1,5 @@
 <!--pages/invitation/index.wxml-->
-<view class="container" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" >
+<view class="container">
   <view class="savethedate">
     <image src="/images/save_the_date_pu.gif" width="100%"/>
   </view>
