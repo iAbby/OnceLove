@@ -14,13 +14,24 @@
     <view>本人兹定于 {{mainInfo.date}}</view>
     <view>农历 {{mainInfo.lunar}}</view>
     <view>举办婚礼</view>
-    <view>期盼您的到来</view>
-    <view>与我们一起见证最幸福的时刻</view>
   </view>
   <view class='detail'>
     <view class="s_icon"><image src="/images/hotel.png"/></view>
     <view class="address">席设:{{mainInfo.hotel}}</view>
     <view class="s_icon"><image src="/images/address.png"/></view>
     <view class="address">地址:{{mainInfo.address}}</view>
+  </view>
+  <view class="words">
+    <image src="/images/words.png" width="100%"/>
+  </view>
+  <view class="tel">
+    <view class="tel_he" wx:if="{{mainInfo.he_tel}}">
+      <view class="call" bindtap="callhe"><image src="/images/he.png" width="100%"/></view> 
+      呼叫新郎
+    </view>
+    <view class="tel_she" wx:if="{{mainInfo.she_tel}}">
+      <view class="call" bindtap="callshe"><image src="/images/she.png" width="100%"/></view>
+      呼叫新郎
+    </view>
   </view>
 </view>
