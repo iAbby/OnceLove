@@ -3,7 +3,6 @@
   text-align: center;
   font-size: 30rpx;
   line-height: 60rpx;
-  margin-top: 20rpx;
 }
 .friends {
   min-height: 0;
