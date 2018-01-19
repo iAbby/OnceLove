@@ -47,3 +47,10 @@
   width: 400rpx;
   height: 300rpx;
 }
+.tips {
+  text-align: center;
+  font-size: 25rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  color: #ccc;
+}
