@@ -29,6 +29,12 @@ Page({
       },
       success: function(res) {
         // console.log(res.data)
+        wx.playBackgroundAudio({
+          dataUrl: res.data.music_url,
+          title: '',
+          coverImgUrl: ''
+        })
+
         that.setData({ 
           mainInfo: res.data.mainInfo,      
           slideList: res.data.slideList,      
@@ -37,11 +43,7 @@ Page({
       }
     })
     
-    wx.playBackgroundAudio({
-      dataUrl: that.data.music_url,
-      title: '',
-      coverImgUrl: ''
-    })
+    
 
     wx.setClipboardData({
       data: '7mdRbr48sM',
