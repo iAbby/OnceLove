@@ -1,4 +1,16 @@
 <!--index.wxml-->
+<view wx:if="{{isPlayingMusic}}">
+  <view class="background_music" bindtap="play">
+    <image src="/images/music_icon.png" class="musicImg music_icon"/>
+    <image src="/images/music_play.png" class="music_play pauseImg" />
+  </view>
+</view>
+<view wx:else>
+  <view class="background_music" bindtap="play">
+    <image src="/images/music_icon.png" class="musicImg"/>
+    <image src="/images/music_play.png" class="music_play playImg" />
+  </view>
+</view>
 <view class="container">
   <view class="swiper">
     <swiper indicator-dots="false" autoplay="false" interval="5000" duration="1000">
@@ -8,3 +20,4 @@
     </swiper>
   </view>
 </view>
+

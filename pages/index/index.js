@@ -6,7 +6,8 @@ var appid = app.globalData.appid;
 
 Page({
   data: {
-    userInfo: {},   
+    userInfo: {}, 
+    isPlayingMusic: true  
   },  
   onLoad: function () {
     var that = this
@@ -30,9 +31,16 @@ Page({
         // console.log(res.data)
         that.setData({ 
           mainInfo: res.data.mainInfo,      
-          slideList: res.data.slideList
+          slideList: res.data.slideList,      
+          music_url: res.data.music_url
         });
       }
+    })
+    
+    wx.playBackgroundAudio({
+      dataUrl: that.data.music_url,
+      title: '',
+      coverImgUrl: ''
     })
 
     wx.setClipboardData({
@@ -40,7 +48,7 @@ Page({
       success: function(res) {
         wx.getClipboardData({
           success: function(res) {
-            console.log(res.data) // data
+            // console.log(res.data) // data
           }
         })
       }
@@ -77,5 +85,22 @@ Page({
         })
       }
     }
-  }
+  },
+  play: function (event) {
+    if (this.data.isPlayingMusic) {
+      wx.pauseBackgroundAudio();
+      this.setData({
+        isPlayingMusic: false
+      })
+    } else {
+      wx.playBackgroundAudio({
+        dataUrl: this.data.music_url,
+        title: '',
+        coverImgUrl: ''
+      })
+      this.setData({
+        isPlayingMusic: true
+      })
+    }
+  },
 })

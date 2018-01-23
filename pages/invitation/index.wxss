@@ -42,7 +42,6 @@
 .address {
   text-align: center;
   padding: 20rpx; 
-  font-weight: 300;
   font-size: 34rpx;
   line-height: 40rpx;
 }
@@ -100,3 +99,4 @@
   height: 80rpx;
   margin-bottom: 10rpx;
 }
+
