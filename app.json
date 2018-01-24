@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/invitation/index",
     "pages/map/index",
-    "pages/bless/index"
+    "pages/bless/index",
+    "pages/chat/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -41,6 +42,12 @@
         "iconPath": "images/4.png",
         "selectedIconPath": "images/4.png",
         "text": "好友祝福"
+      },
+      {
+        "pagePath": "pages/chat/index",
+        "iconPath": "images/5.png",
+        "selectedIconPath": "images/5.png",
+        "text": "留言评论"
       }
     ]
   }
