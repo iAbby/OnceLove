@@ -1,6 +1,6 @@
 /* pages/chat/index.wxss */
 page {
-    background-color: #f8f8f8;
+    background-color: #fde7e3;
     padding-bottom: 150rpx;
 }
 .chat_list {
@@ -10,9 +10,9 @@ page {
     padding: 30rpx;
     min-height: 0;
     overflow: hidden;
-    background-color: #fff;
+    background-color: rgba(255,255,255,.9);
     border-radius: 5px;
-    box-shadow:  0 0 20px rgba(0,0,0,.1);
+    box-shadow:  0 0 20px rgba(190,77,43,.2);
 }
 .chat_face {
     width: 100rpx;
@@ -85,14 +85,14 @@ page {
 }
 
 .befirst {
-    width: 500rpx;
-    height: 339rpx;
+    width: 600rpx;
+    height: 450rpx;
     margin: 0 auto;
     min-height: 0;
     overflow: hidden;
     margin-top: 200rpx;
 }
 .befirst image{
-    width: 500rpx;
-    height: 339rpx;
+    width: 600rpx;
+    height: 450rpx;
 }

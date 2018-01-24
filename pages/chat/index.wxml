@@ -16,7 +16,7 @@
     </view>
     <view wx:else>
         <view class="befirst">
-            <image src="/images/ourwedding.gif"/>
+            <image src="/images/lovemail.gif"/>
         </view>
     </view>
     <view class="send_msg">

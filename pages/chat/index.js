@@ -135,7 +135,7 @@ Page({
           if (res.data.success) {
             that.setData({
               chatList: res.data.chatList,
-              words: ''
+              chatNum: res.data.chatNum
             });
             wx.showModal({
               title: '提示',
