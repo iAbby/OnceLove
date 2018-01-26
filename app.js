@@ -21,7 +21,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    appid:'wx4feb8e53536131a2',
+    appid:'wxade372ce7f2da061',
     server: 'https://wx.qiaker.cn/api'
   }
 });
