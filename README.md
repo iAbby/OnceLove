@@ -8,6 +8,7 @@
 * 邀请函展示
 * 地图导航
 * 好友祝福
+* 留言评论
 
 
 ## 使用说明
@@ -17,11 +18,9 @@
 3.开发者工具新建项目上传即可
 
 
-## 接口申请地址
+## 数据接口地址
 
-申请地址：<a href="https://wx.qiaker.cn/pub.html" target="_blank">https://wx.qiaker.cn/pub.html</a><br/>
-
-修改地址：<a href="https://wx.qiaker.cn/pub.html?appid=您的小程序appid" target="_blank">https://wx.qiaker.cn/pub.html?appid=您的小程序appid</a>
+后台地址：<a href="https://wx.qiaker.cn/pub.html" target="_blank">https://wx.qiaker.cn/pub.html</a><br/>
 
 
 ## 有问题反馈
