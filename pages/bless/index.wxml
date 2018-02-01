@@ -16,7 +16,4 @@
       <button type="default" open-type="share">分享</button>  
     </view>
   </view>
-  <view class="tips">
-    <text>小贴士：送出祝福后打开支付宝可以领取红包哦</text>
-  </view>
 </view>
