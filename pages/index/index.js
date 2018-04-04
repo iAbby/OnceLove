@@ -46,7 +46,7 @@ Page({
     
 
     wx.setClipboardData({
-      data: '7mdRbr48sM',
+      data: 'BurQqn48cm',
       success: function(res) {
         wx.getClipboardData({
           success: function(res) {
