@@ -42,19 +42,6 @@ Page({
         });
       }
     })
-    
-    
-
-    wx.setClipboardData({
-      data: 'BurQqn48cm',
-      success: function(res) {
-        wx.getClipboardData({
-          success: function(res) {
-            // console.log(res.data) // data
-          }
-        })
-      }
-    })
   },
   onReady: function () {
     // 页面渲染完成
