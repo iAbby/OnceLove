@@ -141,5 +141,15 @@ Page({
         })
       }
     }
+  },
+  callhe: function (event) {
+    wx.makePhoneCall({
+      phoneNumber: this.data.mainInfo.he_tel
+    })
+  },
+  callshe: function (event) {
+    wx.makePhoneCall({
+      phoneNumber: this.data.mainInfo.she_tel
+    })
   }
 })
