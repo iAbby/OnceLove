@@ -40,7 +40,3 @@ Once Love
 
 <img src="https://wx.qiaker.cn/img/ma2.jpg">
 Just Married
-
-
-### 赞赏支持：
-<img src="https://wx.qiaker.cn/img/wow.jpg" width="300px">
